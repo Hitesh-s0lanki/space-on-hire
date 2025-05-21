@@ -1,0 +1,26 @@
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+
+const PhoneInputComponent = ({
+  onChange,
+  phone,
+  disabled,
+}: {
+  onChange: (phone: string) => void;
+  phone: string;
+  disabled?: boolean;
+}) => {
+  return (
+    <div>
+      <PhoneInput
+        country={"in"}
+        value={phone}
+        onChange={onChange}
+        inputClass="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        disabled={disabled}
+      />
+    </div>
+  );
+};
+
+export default PhoneInputComponent;
